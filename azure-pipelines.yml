@@ -1,0 +1,60 @@
+trigger: none
+
+
+pool:
+  name: Azure Pipelines
+  vmImage: 'windows-latest'
+
+variables:
+- name: nodeJsVersion
+  value: '16.x'
+
+jobs:
+  - job: playwrighttest
+    displayName: Playwright Test
+    steps:
+      - task: NodeTool@0
+        displayName: "Use $(nodeJsVersion)"
+        enabled: true
+        inputs:
+          versionSpec: '$(nodeJsVersion)'
+      
+      
+      - task: PowerShell@2
+        displayName: "Install Packages"
+        enabled: true
+        inputs:
+          targetType: 'inline'
+          script: |
+            npm install @playwright/test
+            npx playwright install
+            npm install @azure/msal-node
+            npm i -D @playwright/test allure-playwright
+            npm install @cucumber/cucumber  
+            npm install cucumber-html-reporter
+            npm install mssql            
+
+      - task: PowerShell@2
+        displayName: "Run Tests BDD"
+        enabled: true
+        inputs:
+          targetType: 'inline'
+          script: |
+             npm config set user 0
+             npm config set unsafe-perm true
+             npx cucumber-js --exit --format html:BDD_Report.html
+             # npx playwright test tests/0004-APITests.spec.js
+             # npx playwright test tests/0003-Dynamics365CustomerServiceHubContactsValidations.spec.js --reporter=line,allure-playwright
+             # npx allure generate ./allure-results --clean
+             
+
+
+   
+      - publish: $(System.DefaultWorkingDirectory)/
+        artifact: playwright-report
+        # always create the artifact, this is useful for debugging failed tests
+        condition: always()
+      
+
+      
+            

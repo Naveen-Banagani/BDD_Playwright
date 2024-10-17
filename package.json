@@ -1,0 +1,23 @@
+{
+  "name": "playwrightautomation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.42.0",
+    "allure-commandline": "^2.23.1",
+    "allure-playwright": "^2.5.0",
+    "cucumber": "^6.0.7",
+    "playwright": "^1.33.0"
+  },
+  "dependencies": {
+    "@azure/msal-node": "^2.0.2",
+    "@cucumber/cucumber": "^9.4.0",
+    "cucumber-html-reporter": "^7.1.1",
+    "minimatch": "^9.0.0"
+  }
+}

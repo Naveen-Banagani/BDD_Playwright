@@ -1,0 +1,136 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "dynamics-365,-customer-selection-hub-account-validation;validate-customer-account-details-with-external-file",
+        "keyword": "Scenario Outline",
+        "line": 3,
+        "name": "Validate Customer Account details with External File",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 15764785400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a login to Ecommerce Dynamics1 application with \"<username>\" and \"<password>\"",
+            "match": {
+              "location": "features\\StepDefinitions\\dynamics365.js:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5883013698
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "Dynamics Home Page displayed",
+            "match": {
+              "location": "features\\StepDefinitions\\dynamics365.js:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11943899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "They Click Customer Service Hub Power App",
+            "match": {
+              "location": "features\\StepDefinitions\\dynamics365.js:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14879890900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "Customer Service Hub Page is opened,click on Accounts Button",
+            "match": {
+              "location": "features\\StepDefinitions\\dynamics365.js:93"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4425574898
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "Accounts page is displayed select all accounts",
+            "match": {
+              "location": "features\\StepDefinitions\\dynamics365.js:101"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5217093900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "Individual account with phone number is copied \"phoneNumber\" and searched using phone numb",
+            "match": {
+              "location": "features\\StepDefinitions\\dynamics365.js:110"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3270061500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "verify displayed account details the test data available \"name\" , \"email\" , \"company\", \"phoneNumber\", \"address\"",
+            "match": {
+              "location": "features\\StepDefinitions\\dynamics365.js:116"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 431957600
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 788900
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@External-file",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "dynamics-365,-customer-selection-hub-account-validation",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Dynamics 365, Customer Selection Hub Account Validation",
+    "tags": [],
+    "uri": "features\\Dynamics1.feature"
+  }
+]
